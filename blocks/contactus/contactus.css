@@ -1,0 +1,51 @@
+.contactus-container {
+    text-align: center;
+}
+
+.contact-us-sf .rich-text-v2 {
+    color: var(--secondary-color);
+}
+
+.contact-us-sf .component-wrapper {
+    text-align: left;
+
+}
+
+.contact-us-sf .component-wrapper .c-control-label {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1rem;
+}
+
+.contactus .form-group {
+    margin-bottom: 2rem;
+}
+
+.contactus input[type="text"],
+.contactus textarea,
+.contactus select {
+    width: 100%;
+    padding: .5rem 1.25rem .5rem .5rem;
+    font-size: initial;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.contactus .optInsTitle {
+    color: var(--primary-text-color);
+}
+
+.contactus .c-form-submit-btn {
+    align-items: center;
+    background-color: var(--primary-color);
+    border: .1rem solid var(--primary-color);
+    color: var(--secondary-text-color);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 1rem 2.5rem;
+}
+
+.contactus input[type="checkbox"] {
+    cursor: pointer;
+    margin-right: 10px;
+}

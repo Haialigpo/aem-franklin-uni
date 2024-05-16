@@ -1,19 +1,39 @@
 .cards > ul {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
-  grid-gap: 16px;
 }
 
 .cards > ul > li {
   border: 1px solid var(--dark-color);
-  background-color: var(--background-color)
+  border-radius: 30px;
+  position: relative;
 }
 
 .cards .cards-card-body {
   margin: 16px;
+}
+
+.page-list-cards .cards .cards-card-body {
+  background: black;
+  border-radius: 0 0 30px 30px;
+  bottom: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  left: 0;
+  line-height: 1.75rem;
+  margin: auto;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  right: 0;
+  text-align: center;
+}
+
+.page-list-cards .cards .cards-card-body a {
+  color: #fff;
 }
 
 .cards .cards-card-image {
@@ -25,7 +45,26 @@
 }
 
 .cards > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 2;
+  border-radius: 30px;
   object-fit: cover;
+  width: 100%;
+}
+
+.cards-container.page-list-cards {
+  padding: 0 0 3.75rem;
+}
+
+.cards-container.page-list-cards #today-im-looking-for {
+  font-size: 2.75rem;
+  line-height: 1.2;
+}
+
+.cards.block ul {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  list-style: none;
+  margin: auto;
+  padding: 0;
 }

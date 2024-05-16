@@ -19,7 +19,12 @@ import {
  */
 export async function loadFragment(path) {
   if (path && path.startsWith('/')) {
-    const resp = await fetch(`${path}.plain.html`);
+    let brandPath = path;
+    if (document.querySelector('meta[name="brand"]')) {
+      const brand = document.querySelector('meta[name="brand"]').content;
+      brandPath = `/${brand}${path}`;
+    }
+    const resp = await fetch(`${brandPath}.plain.html`);
     if (resp.ok) {
       const main = document.createElement('main');
       main.innerHTML = await resp.text();
