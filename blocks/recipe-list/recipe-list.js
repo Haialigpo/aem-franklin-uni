@@ -1,12 +1,12 @@
 // Function to initialize the component and make the HTTP request
 function initProductListComponents() {
   // Select all div elements with the class 'recipe-list-container'
-  const divs = document.querySelectorAll('.recipe-list-container');
+  const divs = document.querySelectorAll(".recipe-list-container");
 
   // Iterate over each div and perform the necessary operations
   divs.forEach((div) => {
     function createProductList(products) {
-      let productListHTML = '';
+      let productListHTML = "";
       products.forEach((product) => {
         productListHTML += `
                             <div class="recipe-item">
@@ -19,7 +19,7 @@ function initProductListComponents() {
                         `;
       });
 
-      div.querySelector('.recipe-list').innerHTML += productListHTML;
+      div.querySelector(".recipe-list").innerHTML += productListHTML;
     }
 
     const { size, apiurl, store } = div.dataset;
@@ -28,7 +28,7 @@ function initProductListComponents() {
       const headers = {
         size,
         store,
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       };
       //  const loadmoreButtonText = div.dataset.loadmorebutton;
 
@@ -78,7 +78,7 @@ function initProductListComponents() {
           }`;
 
       fetch(apiurl, {
-        method: 'POST',
+        method: "POST",
         headers,
         body: JSON.stringify({ query }),
       })
@@ -88,7 +88,7 @@ function initProductListComponents() {
           createProductList(data.data.products.items);
         })
         .catch((error) => {
-          console.error('Error:', error);
+          console.error("Error:", error);
         });
     };
     fetchAndDisplayProducts();
