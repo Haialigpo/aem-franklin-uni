@@ -6,7 +6,6 @@ function initProductListComponents() {
   // Iterate over each div and perform the necessary operations
   divs.forEach((div) => {
     function createProductList(products) {
-      console.log(products);
       let productListHTML = '';
       products.forEach((product) => {
         productListHTML += `
@@ -31,7 +30,7 @@ function initProductListComponents() {
         store,
         'Content-Type': 'application/json',
       };
-        //  const loadmoreButtonText = div.dataset.loadmorebutton;
+      //  const loadmoreButtonText = div.dataset.loadmorebutton;
 
       const query = `
           query {
