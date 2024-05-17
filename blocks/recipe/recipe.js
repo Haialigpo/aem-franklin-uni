@@ -4,7 +4,7 @@ function createrecipeHTML(recipe, div) {
     recipeHTML += `
     <div class="recipe-info">
           <div class="left-container">
-           <img src="${`${recipe.recipeData.image[0].default}?im=AspectCrop=(400,400);Resize=(400,400)`}" alt="${recipe.image.label}">
+           <img src="${`${recipe.recipeData.image[0].default}?im=AspectCrop=(400,400);Resize=(400,400)`}" alt="${recipe.recipeData.name}">
           </div>
           <div class="right-container">
           <h1>${recipe.recipeData.name}</h1>
@@ -15,7 +15,7 @@ function createrecipeHTML(recipe, div) {
   
     div.querySelector('.recipe-wrapper').innerHTML += recipeHTML;
   }
-  function fetchrecipeDetails(sku) {
+  function fetchrecipeDetails(recipeId) {
     const div = document.querySelector('.recipe-container');
     const { apiurl, store } = div.dataset;
   
@@ -26,7 +26,7 @@ function createrecipeHTML(recipe, div) {
     //  const loadmoreButtonText = div.dataset.loadmorebutton;
   
     const query = `{
-        recipes(filter: { recipeID: { eq: "104773" } }) {
+        recipes(filter: { recipeID: { eq: ${JSON.stringify(recipeId)} } }) {
             total_Count
             items {
                 recipeData {
@@ -80,8 +80,8 @@ function createrecipeHTML(recipe, div) {
     const url = window.location.href;
     const urlObj = new URL(url);
     const params = new URLSearchParams(urlObj.search);
-    const sku = params.get('recipe');
-    fetchrecipeDetails(sku);
+    const recipeId = params.get('id');
+    fetchrecipeDetails(recipeId);
   }
   
   initrecipeComponents();
