@@ -33,7 +33,6 @@
     "stylelint-config-standard": "36.0.0"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1",
     "prettier": "^3.2.5"
   }
 }

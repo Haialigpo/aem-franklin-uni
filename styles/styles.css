@@ -10,8 +10,6 @@
  * governing permissions and limitations under the License.
  */
 
-@import url("../node_modules/normalize.css/normalize.css");
-
 * {
   box-sizing: border-box;
 }
@@ -216,9 +214,11 @@ pre {
     padding: 0 1rem 3.75rem;
   }
 }
+
 main {
   margin-bottom: 5rem;
 }
+
 main pre {
   border-radius: .25em;
   overflow-x: auto;
