@@ -254,7 +254,7 @@ header nav .nav-sections ul > li > ul > li {
     left: -1em;
     width: 200px;
     margin-top: 12px;
-    padding: 1em;
+    padding: 0rem 1rem;
     white-space: initial;
   }
 
