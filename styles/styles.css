@@ -12,7 +12,7 @@
 
 @import url("../node_modules/normalize.css/normalize.css");
 
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -52,7 +52,7 @@
   src: local('Arial');
 }
 
-@media (width >= 900px) {
+@media (width >=900px) {
   :root {
     --heading-font-size-xxl: 60px;
     --heading-font-size-xl: 48px;
@@ -69,27 +69,27 @@
   --secondary-text-color: #fff;
   --tertiary-text-color: #fff;
   --background-color: #fff;
-  --primary-color:#007a33;
-  --secondary-color:#000;
-  --tertiary-color:#ffd32e;
-  --secondary-button-background:#fff;
-  --secondary-button-color:#007a33;
+  --primary-color: #007a33;
+  --secondary-color: #000;
+  --tertiary-color: #ffd32e;
+  --secondary-button-background: #fff;
+  --secondary-button-color: #007a33;
   --footer-color: #007a33;
   --footer-text-color: #fff;
-  --tab-color-grey:#757575;
+  --tab-color-grey: #757575;
 }
 
 :root .theme-tresemme {
   --link-color: #000;
-  --primary-text-color: #000;
+  --primary-text-color: #fff;
   --secondary-text-color: #fff;
   --tertiary-text-color: #eac56f;
   --background-color: #000;
-  --primary-color:#000;
-  --secondary-color:#eac56f;
-  --tertiary-color:#fff;
-  --secondary-button-background:#fff;
-  --secondary-button-color:#000;
+  --primary-color: #000;
+  --secondary-color: #eac56f;
+  --tertiary-color: #fff;
+  --secondary-button-background: #fff;
+  --secondary-button-color: #000;
   --footer-color: #f5f5f5;
   --footer-text-color: #000;
 }
@@ -145,8 +145,12 @@ header {
   height: auto;
 }
 
-h1, h2, h3,
-h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--heading-font-family);
   font-weight: 600;
   line-height: 1.25;
@@ -155,14 +159,36 @@ h4, h5, h6 {
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-h1 { font-size: var(--heading-font-size-xxl) }
-h2 { font-size: var(--heading-font-size-xl) }
-h3 { font-size: var(--heading-font-size-l) }
-h4 { font-size: var(--heading-font-size-m) }
-h5 { font-size: var(--heading-font-size-s) }
-h6 { font-size: var(--heading-font-size-xs) }
+h1 {
+  font-size: var(--heading-font-size-xxl)
+}
 
-p, dl, ol, ul, pre, blockquote {
+h2 {
+  font-size: var(--heading-font-size-xl)
+}
+
+h3 {
+  font-size: var(--heading-font-size-l)
+}
+
+h4 {
+  font-size: var(--heading-font-size-m)
+}
+
+h5 {
+  font-size: var(--heading-font-size-s)
+}
+
+h6 {
+  font-size: var(--heading-font-size-xs)
+}
+
+p,
+dl,
+ol,
+ul,
+pre,
+blockquote {
   margin-bottom: 1em;
   margin-top: 1em;
 }
@@ -171,7 +197,8 @@ p {
   font-size: 1rem;
 }
 
-code, pre {
+code,
+pre {
   font-family: var(--fixed-font-family);
   font-size: var(--body-font-size-s);
 }
@@ -198,18 +225,19 @@ main pre {
 }
 
 /* links */
-a:any-link {
+a {
+  text-decoration: underline;
   color: var(--link-color);
-  text-decoration: none;
 }
 
 a:hover {
-  color: var(--link-hover-color);
+  /* color: var(--link-hover-color); */
   text-decoration: underline;
 }
 
 /* buttons */
-a.button:any-link, button {
+a.button:any-link,
+button {
   background-color: var(--link-color);
   border: 2px solid transparent;
   border-radius: 30px;
@@ -228,16 +256,21 @@ a.button:any-link, button {
   white-space: nowrap;
 }
 
-a.button:hover, a.button:focus, button:hover, button:focus  {
+a.button:hover,
+a.button:focus,
+button:hover,
+button:focus {
   background-color: var(--link-hover-color);
   cursor: pointer;
 }
 
-button:disabled, button:disabled:hover {
+button:disabled,
+button:disabled:hover {
   cursor: unset;
 }
 
-a.button.secondary, button.secondary {
+a.button.secondary,
+button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
   color: var(--text-color)
@@ -263,17 +296,17 @@ main img {
 /* sections */
 
 /* main .section {
-  padding: 64px 16px;
-}
+   padding: 64px 16px;
+ }
 
-@media (width >= 600px) {
-  main .section {
-    padding: 64px 32px;
-  }
-} */
+ @media (width >= 600px) {
+   main .section {
+     padding: 64px 32px;
+   }
+ } */
 
-@media (width >= 900px) {
-  .section > div {
+@media (width >=900px) {
+  .section>div {
     margin: auto;
     max-width: 1200px;
   }
@@ -297,7 +330,8 @@ main img {
   font-size: 1rem;
 }
 
-.heading h2, .heading p{
+.heading h2,
+.heading p {
   text-align: center;
 }
 
@@ -306,6 +340,6 @@ main img {
   margin-bottom: 5rem;
 }
 
-.heading-center #contact-us{
+.heading-center #contact-us {
   margin-top: 0;
 }

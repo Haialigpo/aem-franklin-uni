@@ -5,6 +5,10 @@ footer {
   color: var(--footer-text-color);
 }
 
+footer a {
+  color:  var(--footer-text-color);
+}
+
 footer .footer {
   max-width: 1200px;
   margin: auto;
