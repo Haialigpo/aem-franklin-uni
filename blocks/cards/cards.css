@@ -67,4 +67,11 @@
   list-style: none;
   margin: auto;
   padding: 0;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .cards.block ul li{
+    flex: 1;
+  }
 }
