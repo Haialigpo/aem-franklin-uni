@@ -45,6 +45,10 @@
     padding: 1rem 2.5rem;
 }
 
+.theme-tresemme .contactus .c-form-submit-btn {
+    border: .1rem solid var(--secondary-button-background);
+}
+
 .contactus input[type="checkbox"] {
     cursor: pointer;
     margin-right: 10px;

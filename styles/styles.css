@@ -81,7 +81,7 @@
 }
 
 :root .theme-tresemme {
-  --link-color: #000;
+  --link-color: #fff;
   --primary-text-color: #fff;
   --secondary-text-color: #fff;
   --tertiary-text-color: #eac56f;
@@ -93,6 +93,9 @@
   --secondary-button-color: #000;
   --footer-color: #f5f5f5;
   --footer-text-color: #000;
+  --tab-color-grey: #757575;
+  --acent-color:#dbeddb;
+  --smoke-color:#f6f9f8;
 }
 
 .primary-button {
