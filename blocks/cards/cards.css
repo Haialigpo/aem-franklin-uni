@@ -70,6 +70,10 @@
   flex-wrap: wrap;
 }
 
+.cards.block ul li{
+  width: 100%;
+}
+
 @media (min-width: 768px) {
   .cards.block ul li{
     flex: 1;
