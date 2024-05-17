@@ -5,17 +5,16 @@ function initProductListComponents() {
 
   // Iterate over each div and perform the necessary operations
   divs.forEach((div) => {
-    function createProductList(products) {
+    function createRecipeList(recipeData) {
       let productListHTML = '';
-      products.forEach((product) => {
+      products.forEach((recipe) => {
         productListHTML += `
-                            <div class='recipe-item'>
-                               <a href='${`pdp?product=${product.sku}`}' aria-label='View details for ${product.name}'>
-                                <img src='${`https://assets.unileversolutions.com/v1/${product.thumbnail.url}.png?im=AspectCrop=(400,400);Resize=(400,400)`}' alt='${product.thumbnail.label}'>
-                                 <h2>${product.name}</h2>
-                                <div class='product-description'>${product.description.html}</div>
-                                </a>
-                            </div>
+                          <div class='recipe-item'>
+                          <a href='${`recipe?id=${recipe.recipeData.recipeID}`}' aria-label='View details for ${recipe.recipeData.name}'>
+                          <img src='${`${recipe.recipeData.newImage[0].default.url}?im=AspectCrop=(400,400);Resize=(400,400)`}' alt='${recipe.recipeData.newImage[0].default.title}'>
+                            <h2>${recipe.recipeData.name}</h2>
+                          </a>
+                      </div>
                         `;
       });
 
@@ -33,49 +32,7 @@ function initProductListComponents() {
       //  const loadmoreButtonText = div.dataset.loadmorebutton;
 
       const query = `
-          query {
-            products(currentPage: ${page}, pageSize: ${size}, filter: {category_uid: {eq: '{\\'sort_by\\':\\'relevance\\'}'}}, sort: {price: ASC}) {
-              total_count
-              items {
-                __typename
-                sku
-                name
-                description {
-                  html
-                }
-                image {
-                  label
-                  url
-                }
-                thumbnail {
-                  label
-                  url
-                }
-                url_key
-                url_rewrites {
-                  url
-                }
-                media_gallery {
-                  __typename
-                  disabled
-                  url
-                  label
-                  position
-                }
-                categories {
-                  __typename
-                  id
-                  name
-                  image
-                }
-                smartProductID_custom_: smartProductID
-                localized_sku_custom_: localized_sku
-                brand_custom_: brand
-                category_custom_: category
-                productVariants_custom_: custom_retailerVariantsSummary
-              }
-            }
-          }`;
+          query {recipes(bygroup:{from:0,group:{in:["{\"brands\":\"knorr\"}","{\"countries\":\"gb\"}"]},size:${size}}){items{recipeData{recipeID,name,description,prepTime,cookTime,totalTime,createdDate,modifiedDate,recipeName,validServingSizes,aggregateRating{ratingCount,ratingValue},difficulty,newImage{default{url,title,caption}},newImage{dish{url,title,caption}},newImage{principle{url,title,caption}},newImage{main_ingredient{url,title,caption}},video{name,contentUrl,type,thumbnailUrl},healthyRecipeFramework,dietaryClaim{include},spiciness,nutritionalInformation{nutritionPerServing{energyPerNutrientBasis{value,unitCode}}}},custom_generalAttributes_custom_:custom_generalAttributes},total_Count_custom_:total_Count,custom_recipeData_custom_:custom_recipeData,status_message_custom_:status_message}}`;
 
       fetch(apiurl, {
         method: 'POST',
@@ -85,7 +42,7 @@ function initProductListComponents() {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
-          createProductList(data.data.products.items);
+          createRecipeList(data.data.recipes.items);
         })
         .catch((error) => {
           console.error('Error:', error);

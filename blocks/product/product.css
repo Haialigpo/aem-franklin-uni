@@ -3,6 +3,7 @@
     grid-template-columns: repeat(12, 1fr);
     grid-column: span 12;
     grid-gap: 30px;
+    background-color: var(--smoke-color);
 }
 
 .product-wrapper .product-info .left-container {

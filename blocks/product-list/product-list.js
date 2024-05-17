@@ -13,6 +13,7 @@ function initProductListComponents() {
                           <div class="product-item">
                              <a href="${`pdp?product=${product.sku}`}" aria-label="View details for ${product.name}">
                               <img src="${`https://assets.unileversolutions.com/v1/${product.thumbnail.url}.png?im=AspectCrop=(400,400);Resize=(400,400)`}" alt="${product.thumbnail.label}">
+                               <div>Ratings [TBD]</div>
                                <h2>${product.name}</h2>
                               <div class="product-description">${product.description.html}</div>
                               </a>
