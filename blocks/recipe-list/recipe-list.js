@@ -57,7 +57,7 @@ function initProductListComponents() {
           total_Count_custom_: total_Count
         }
       }
-      `
+      
       `;
 
       fetch(apiurl, {
