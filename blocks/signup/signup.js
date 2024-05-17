@@ -1,4 +1,4 @@
-class Signup {
+class SignupForm {
   constructor(signupElement) {
     this.comp = signupElement;
     this.init();
@@ -8,7 +8,7 @@ class Signup {
     const dataAttributes = this.comp.dataset;
     if (dataAttributes.scriptSignupJs) {
       const scriptElement = document.createElement('script');
-      scriptElement.setAttribute('src', dataAttributes.scriptContactus);
+      scriptElement.setAttribute('src', dataAttributes.scriptSignupJs);
       scriptElement.setAttribute('id', 'form-app-js-formwidget-024406fe71');
       scriptElement.setAttribute('type', 'module');
       const linkElement = document.createElement('link');
@@ -19,6 +19,7 @@ class Signup {
       const widgetLoader = document.createElement('div');
       widgetLoader.classList.add('form-widget');
       widgetLoader.setAttribute('data-success-page', dataAttributes.successUrl);
+      widgetLoader.setAttribute('data-form-id', dataAttributes.formId);
       this.comp.append(scriptElement, linkElement, widgetLoader);
     }
   }
@@ -32,7 +33,7 @@ function onDocumentReady() {
     }
 
     // eslint-disable-next-line no-new
-    new Signup(signupContainer);
+    new SignupForm(signupContainer);
   }
 }
 
