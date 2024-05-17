@@ -32,7 +32,33 @@ function initProductListComponents() {
       //  const loadmoreButtonText = div.dataset.loadmorebutton;
 
       const query = `
-          query {recipes(bygroup:{from:0,group:{in:["{\"brands\":\"knorr\"}","{\"countries\":\"gb\"}"]},size:${size}}){items{recipeData{recipeID,name,description,prepTime,cookTime,totalTime,createdDate,modifiedDate,recipeName,validServingSizes,aggregateRating{ratingCount,ratingValue},difficulty,newImage{default{url,title,caption}},newImage{dish{url,title,caption}},newImage{principle{url,title,caption}},newImage{main_ingredient{url,title,caption}},video{name,contentUrl,type,thumbnailUrl},healthyRecipeFramework,dietaryClaim{include},spiciness,nutritionalInformation{nutritionPerServing{energyPerNutrientBasis{value,unitCode}}}},custom_generalAttributes_custom_:custom_generalAttributes},total_Count_custom_:total_Count,custom_recipeData_custom_:custom_recipeData,status_message_custom_:status_message}}`;
+      query {
+        recipes(
+          bygroup: {
+            from: 0
+            group: { in: ["{\\"brands\\":\\"knorr\\"}", "{\\"countries\\":\\"gb\\"}"] }
+            size: 6
+          }
+        ) {
+          items {
+            recipeData {
+              recipeID
+              name
+              description
+              newImage {
+                default {
+                  url
+                  title
+                  caption
+                }
+              }
+            }
+          }
+          total_Count_custom_: total_Count
+        }
+      }
+      `
+      `;
 
       fetch(apiurl, {
         method: 'POST',
