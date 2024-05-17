@@ -1,14 +1,14 @@
 // Function to initialize the component and make the HTTP request
-function initProductListComponents() {
+function initRecipeListComponents() {
   // Select all div elements with the class 'recipe-list-container'
   const divs = document.querySelectorAll('.recipe-list-container');
 
   // Iterate over each div and perform the necessary operations
   divs.forEach((div) => {
     function createRecipeList(recipeData) {
-      let productListHTML = '';
-      products.forEach((recipe) => {
-        productListHTML += `
+      let recipeListHTML = '';
+      recipeData.forEach((recipe) => {
+        recipeListHTML += `
                           <div class='recipe-item'>
                           <a href='${`recipe?id=${recipe.recipeData.recipeID}`}' aria-label='View details for ${recipe.recipeData.name}'>
                           <img src='${`${recipe.recipeData.newImage[0].default.url}?im=AspectCrop=(400,400);Resize=(400,400)`}' alt='${recipe.recipeData.newImage[0].default.title}'>
@@ -18,12 +18,12 @@ function initProductListComponents() {
                         `;
       });
 
-      div.querySelector('.recipe-list').innerHTML += productListHTML;
+      div.querySelector('.recipe-list').innerHTML += recipeListHTML;
     }
 
     const { size, apiurl, store } = div.dataset;
     // Extract data attributes from the div
-    const fetchAndDisplayProducts = (page = 1) => {
+    const fetchAndDisplayRecipes= (page = 1) => {
       const headers = {
         size,
         store,
@@ -74,8 +74,8 @@ function initProductListComponents() {
           console.error('Error:', error);
         });
     };
-    fetchAndDisplayProducts();
+    fetchAndDisplayRecipes();
   });
 }
 
-initProductListComponents();
+initRecipeListComponents();
