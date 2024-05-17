@@ -1,0 +1,22 @@
+.recipe-wrapper .recipe-info {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column: span 12;
+    grid-gap: 30px;
+    background-color: var(--smoke-color);
+}
+
+.recipe-wrapper .recipe-info .left-container {
+    text-align: center;
+}
+
+@media (width >= 768px) {
+    .recipe-wrapper .recipe-info .left-container {
+        grid-column: span 6;
+    }
+
+    .recipe-wrapper .recipe-info .right-container {
+        grid-column: span 6;
+    }
+
+}
