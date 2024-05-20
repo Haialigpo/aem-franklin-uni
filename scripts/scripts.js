@@ -19,7 +19,7 @@ const LCP_BLOCKS = []; // add your LCP blocks to the list
 /**
  * Builds hero block and prepends to main in a new section.
  * @param {Element} main The container element
- */
+ 
 function buildHeroBlock(main) {
   const h1 = main.querySelector('h1');
   const picture = main.querySelector('picture');
@@ -30,6 +30,7 @@ function buildHeroBlock(main) {
     main.prepend(section);
   }
 }
+*/
 /*
   * Returns the environment type based on the hostname.
 */
@@ -73,7 +74,7 @@ function autolinkModals(element) {
  */
 function buildAutoBlocks(main) {
   try {
-    buildHeroBlock(main);
+   // buildHeroBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
