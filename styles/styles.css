@@ -146,7 +146,7 @@ body.appear {
 }
 
 header {
-  height: 140px;
+  min-height: 140px;
 }
 
 h1,
