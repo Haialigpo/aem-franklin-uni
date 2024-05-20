@@ -63,6 +63,10 @@
 
 }
 
+.product-description pre {
+  white-space: pre-wrap;
+}
+
 @media (width >= 768px) {
   .product-item {
     flex: 1 0 30%;
