@@ -30,6 +30,18 @@ function buildHeroBlock(main) {
     main.prepend(section);
   }
 }
+/*
+  * Returns the environment type based on the hostname.
+*/
+export function getEnvType(hostname = window.location.hostname) {
+  const fqdnToEnvType = {
+    'localhost:3000': 'dev',
+    'main--aem-franklin-sop--haiali8.hlx.page': 'preview',
+    'main--aem-franklin-sop--haiali8.hlx.live': 'live',
+  };
+  return fqdnToEnvType[hostname] || 'dev';
+}
+
 
 /**
  * load fonts.css and set a session storage flag
