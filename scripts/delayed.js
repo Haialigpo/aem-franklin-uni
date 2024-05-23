@@ -16,26 +16,3 @@ async function loadAdobeLaunch() {
 }
 
 await loadAdobeLaunch();
-
-async function loadLiveChat() {
-  const liveChatJsSrc = {
-    dev: 'https://azcb-ne-pas-cdnprod.azureedge.net/knorruk105/aemtemplate/Bot.js?brand=knorr&locale=en_GB',
-    preview: 'https://azcb-ne-pas-cdnprod.azureedge.net/knorruk105/aemtemplate/Bot.js?brand=knorr&locale=en_GB',
-    live: 'https://azcb-ne-pas-cdnprod.azureedge.net/knorruk105/aemtemplate/Bot.js?brand=knorr&locale=en_GB',
-  };
-  const liveChatCssSrc = {
-    dev: 'https://azcb-ne-pas-cdnprod.azureedge.net/knorruk105/aemtemplate/BotChat.css?brand=knorr&locale=en_GB',
-    preview: 'https://azcb-ne-pas-cdnprod.azureedge.net/knorruk105/aemtemplate/BotChat.css?brand=knorr&locale=en_GB',
-    live: 'https://azcb-ne-pas-cdnprod.azureedge.net/knorruk105/aemtemplate/BotChat.css?brand=knorr&locale=en_GB',
-  };
-  const liveChatSkinCssSrc = {
-    dev: 'https://azcb-ne-pas-cdnprod.azureedge.net/knorruk105/aemtemplate/Bot-Skin.css?brand=knorr&locale=en_GB',
-    preview: 'https://azcb-ne-pas-cdnprod.azureedge.net/knorruk105/aemtemplate/Bot-Skin.css?brand=knorr&locale=en_GB',
-    live: 'https://azcb-ne-pas-cdnprod.azureedge.net/knorruk105/aemtemplate/Bot-Skin.css?brand=knorr&locale=en_GB',
-  };
-  await loadScript(liveChatJsSrc[getEnvType()], {});
-  await loadCSS(liveChatCssSrc[getEnvType()]);
-  await loadCSS(liveChatSkinCssSrc[getEnvType()]);
-}
-
-await loadLiveChat();

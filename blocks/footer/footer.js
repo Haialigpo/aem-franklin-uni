@@ -1,5 +1,7 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
+// @ts-ignore
+import loadLiveChat from '../livechat/livechat.js';
 
 /**
  * loads and decorates the footer
@@ -19,14 +21,5 @@ export default async function decorate(block) {
 
   block.append(footer);
   // eslint-disable-next-line no-use-before-define
-  // setClass();
+  loadLiveChat();
 }
-// function setClass() {
-//   if (document.querySelector('.footer-wrapper')) {
-//     const footerWrapper = document.querySelector('.footer-wrapper');
-//     if (footerWrapper.querySelector('.section')) {
-//       const classes = footerWrapper.querySelector('.section').classList;
-//       footerWrapper.classList.add(...classes);
-//     }
-//   }
-// }
