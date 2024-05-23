@@ -21,5 +21,5 @@ export default async function decorate(block) {
 
   block.append(footer);
   // eslint-disable-next-line no-use-before-define
-  loadLiveChat();
+  await loadLiveChat();
 }
